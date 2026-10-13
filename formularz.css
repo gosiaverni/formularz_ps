@@ -35,23 +35,49 @@ h1 {
 }
 
 #event-form { width: 100%; }
+
+/* Wyrównanie wszystkich wierszy formularza */
 .form-row {
   display: grid;
-  grid-template-columns: minmax(145px, 1fr) minmax(180px, 1fr);
-  align-items: start;
+  grid-template-columns: minmax(145px, 1fr) minmax(0, 1.4fr);
+  align-items: center;
   gap: 22px;
-  margin: 0 0 24px;
-  border: 0;
-  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
+
+/* Etykiety po lewej */
 .form-row > label,
-.form-row > legend {
-  padding-top: 10px;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: .15px;
+.form-row > .date-heading {
+  justify-self: end;
   text-align: right;
+  margin: 0;
 }
+
+/* Pola po prawej */
+.form-row > input,
+.form-row > select,
+.form-row > textarea,
+.form-row > .date-fields {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* Węższe ekrany */
+@media (max-width: 600px) {
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .form-row > label,
+  .form-row > .date-heading {
+    justify-self: start;
+    text-align: left;
+  }
+}
+
 input, select {
   width: 100%;
   min-width: 0;
