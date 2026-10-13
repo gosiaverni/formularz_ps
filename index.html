@@ -22,15 +22,19 @@
         <input id="institution" name="institution" type="text" required maxlength="180">
       </div>
 
-      <fieldset class="form-row date-row">
-        <legend>czas trwania</legend>
-        <div class="date-fields">
-          <label for="start_date">od</label>
-          <input id="start_date" name="start_date" type="date" required>
-          <label for="end_date">do</label>
-          <input id="end_date" name="end_date" type="date" required>
-        </div>
-      </fieldset>
+      
+<div class="form-row date-row">
+  <div class="date-heading">czas trwania</div>
+
+  <div class="date-fields">
+    <label for="start_date">od</label>
+    <input id="start_date" name="start_date" type="date" required>
+
+    <label for="end_date">do</label>
+    <input id="end_date" name="end_date" type="date" required>
+  </div>
+</div>
+
 
       <div class="form-row location-row">
         <label for="location">lokalizacja</label>
@@ -69,10 +73,7 @@
 
       </div>
 
-      <div class="form-row">
-        <label for="cover_image">link do zdjęcia</label>
-        <input id="cover_image" name="cover_image" type="url" placeholder="https://…" maxlength="2048">
-      </div>
+      
 
       <div class="form-actions">
         <p id="form-status" role="status" aria-live="polite"></p>

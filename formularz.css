@@ -69,22 +69,56 @@ input, select {
 input:focus, select:focus { outline: 2px solid #fff; }
 input[type="date"] { color-scheme: light; }
 
-.date-row { align-items: start; }
+
+.date-row {
+  display: grid;
+  grid-template-columns: minmax(145px, 1fr) minmax(180px, 1fr);
+  align-items: start;
+  gap: 22px;
+}
+
+.date-heading {
+  padding-top: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .15px;
+  text-align: right;
+}
+
 .date-fields {
   display: grid;
   grid-template-columns: 22px minmax(0, 1fr) 22px minmax(0, 1fr);
   align-items: center;
   gap: 8px;
 }
+
 .date-fields label {
   font-size: 12px;
   font-weight: 700;
   text-align: center;
 }
+
 .date-fields input {
   padding: 0 9px;
   font-size: 12px;
 }
+
+@media (max-width: 600px) {
+  .date-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .date-heading {
+    padding-top: 0;
+    text-align: left;
+  }
+
+  .date-fields {
+    grid-template-columns: 24px minmax(0, 1fr) 24px minmax(0, 1fr);
+  }
+}
+
 
 .autocomplete-wrap { position: relative; min-width: 0; }
 .suggestions {
