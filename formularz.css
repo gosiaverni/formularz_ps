@@ -37,6 +37,7 @@ h1 {
 #event-form { width: 100%; }
 
 /* Wyrównanie wszystkich wierszy formularza */
+
 .form-row {
   display: grid;
   grid-template-columns: minmax(145px, 1fr) minmax(0, 1.4fr);
@@ -44,7 +45,9 @@ h1 {
   gap: 22px;
   width: 100%;
   box-sizing: border-box;
+  margin-bottom: 22px;
 }
+
 
 /* Etykiety po lewej */
 .form-row > label,
@@ -96,12 +99,15 @@ input:focus, select:focus { outline: 2px solid #fff; }
 input[type="date"] { color-scheme: light; }
 
 
+
 .date-row {
   display: grid;
   grid-template-columns: minmax(145px, 1fr) minmax(180px, 1fr);
   align-items: start;
   gap: 22px;
+  margin-bottom: 22px;
 }
+
 
 .date-heading {
   padding-top: 10px;
