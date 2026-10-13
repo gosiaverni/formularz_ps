@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dodaj wydarzenie — Punkt Sztuki</title>
+  <link rel="stylesheet" href="formularz.css">
+  <!-- Wymagane: Leaflet nie jest tu potrzebny; Supabase musi być zainicjalizowany wcześniej. -->
+</head>
+<body>
+  <main class="event-panel">
+    <h1>stwórz wydarzenie</h1>
+
+    <form id="event-form" autocomplete="off">
+      <div class="form-row">
+        <label for="title">nazwa wydarzenia</label>
+        <input id="title" name="title" type="text" required maxlength="180">
+      </div>
+
+      <div class="form-row">
+        <label for="institution">nazwa muzeum/instytucji</label>
+        <input id="institution" name="institution" type="text" required maxlength="180">
+      </div>
+
+      <fieldset class="form-row date-row">
+        <legend>czas trwania</legend>
+        <div class="date-fields">
+          <label for="start_date">od</label>
+          <input id="start_date" name="start_date" type="date" required>
+          <label for="end_date">do</label>
+          <input id="end_date" name="end_date" type="date" required>
+        </div>
+      </fieldset>
+
+      <div class="form-row location-row">
+        <label for="location">lokalizacja</label>
+        <div class="autocomplete-wrap">
+          <input id="location" name="location" type="text" required
+                 placeholder="Wpisz adres lub nazwę miejsca"
+                 aria-autocomplete="list" aria-controls="location-suggestions"
+                 aria-expanded="false">
+          <ul id="location-suggestions" class="suggestions" role="listbox" hidden></ul>
+          <p class="field-hint" id="location-hint">Wybierz jedną z podpowiedzi, aby zapisać współrzędne na mapie.</p>
+          <p class="field-error" id="location-error" role="status" hidden></p>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label for="link">link</label>
+        <input id="link" name="link" type="url" placeholder="https://…" maxlength="2048">
+      </div>
+
+      <div class="form-row">
+        <label for="category">kategoria</label>
+        
+<select id="category" name="category" required>
+  <option value="" selected disabled>wybierz kategorię</option>
+  <option value="malarstwo">Malarstwo</option>
+  <option value="rzeźba">Rzeźba</option>
+  <option value="moda">Moda</option>
+  <option value="grafika">Grafika</option>
+  <option value="rysunek">Rysunek</option>
+  <option value="fotografia">Fotografia</option>
+  <option value="historyczne">Historyczne</option>
+  <option value="sztuka uzytkowa">Rzemiosło artystyczne</option>
+  <option value="rodzinne">Dla dzieci/rodzin</option>
+  <option value="inne">Inne</option>
+</select>
+
+      </div>
+
+      <div class="form-row">
+        <label for="cover_image">link do zdjęcia</label>
+        <input id="cover_image" name="cover_image" type="url" placeholder="https://…" maxlength="2048">
+      </div>
+
+      <div class="form-actions">
+        <p id="form-status" role="status" aria-live="polite"></p>
+        <button id="submit-button" type="submit">dodaj wydarzenie</button>
+      </div>
+    </form>
+  </main>
+
+ 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/supabase.js"></script>
+<script src="/formularz.js"></script>
+</body>
+</html>
+
