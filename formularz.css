@@ -109,13 +109,14 @@ input[type="date"] { color-scheme: light; }
 }
 
 
+
 .date-heading {
   padding-top: 10px;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: .15px;
+  font: inherit;
   text-align: right;
+  margin: 0;
 }
+
 
 .date-fields {
   display: grid;
